@@ -41,8 +41,8 @@ app.patch("/api/users/:email", async (req, res) => {
   try {
     const email = req.params;
     const updateUser = req.body;
-    await User.updateOne(email, updateUser)
-    res.status(200).json({message: "user update successful"});
+    await User.updateOne(email, updateUser);
+    res.status(200).json({ message: "user update successful" });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -52,7 +52,7 @@ app.delete("/api/users/:email", async (req, res) => {
   try {
     const email = req.params;
     await User.deleteOne(email);
-    res.status(200).json({message: "user delete successful"});
+    res.status(200).json({ message: "user delete successful" });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
